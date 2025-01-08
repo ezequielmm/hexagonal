@@ -11,17 +11,9 @@ namespace GtMotive.Estimate.Microservice.Api.Controllers
     /// </summary>
     [ApiController]
     [Route("api/[controller]")]
-    public class VehicleController : ControllerBase, IVehicleController
+    public class VehicleController(IVehicleService vehicleService) : ControllerBase, IVehicleController
     {
-        private readonly VehicleService _vehicleService;
-
-        public VehicleController(VehicleService vehicleService)
-        {
-            if (vehicleService != null)
-            {
-                _vehicleService = vehicleService;
-            }
-        }
+        private readonly IVehicleService _vehicleService = vehicleService ?? throw new ArgumentNullException(nameof(vehicleService));
 
         /// <summary>
         /// Obtiene todos los vehículos disponibles.
