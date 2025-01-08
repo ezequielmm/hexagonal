@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using GtMotive.Estimate.Microservice.Domain.Interfaces;
 using Microsoft.ApplicationInsights;
 
-namespace GtMotive.Estimate.Microservice.Infrastructure.Telemetry
+namespace GtMotive.Estimate.Microservice.Domain.Telemetry
 {
     [ExcludeFromCodeCoverage]
     public class AppTelemetry : ITelemetry

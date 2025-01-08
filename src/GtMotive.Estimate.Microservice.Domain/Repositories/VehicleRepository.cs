@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using GtMotive.Estimate.Microservice.Domain.Entities;
+using GtMotive.Estimate.Microservice.Domain.Repositories.Interfaces;
 using MongoDB.Driver;
 
-namespace GtMotive.Estimate.Microservice.Infrastructure.Repositories
+namespace GtMotive.Estimate.Microservice.Domain.Repositories
 {
     /// <summary>
-    /// Repositorio para gestionar los vehículos en MongoDB.
+    /// Repository for managing vehicles in MongoDB.
     /// </summary>
-    public class VehicleRepository
+    public class VehicleRepository : IVehicleRepository
     {
         private readonly IMongoCollection<Vehicle> _vehicles;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VehicleRepository"/> class.
+        /// </summary>
+        /// <param name="database">The MongoDB database.</param>
         public VehicleRepository(IMongoDatabase database)
         {
             if (database != null)
@@ -22,29 +27,29 @@ namespace GtMotive.Estimate.Microservice.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// Obtiene todos los vehículos disponibles.
+        /// Gets all available vehicles.
         /// </summary>
-        /// <returns>Una lista de vehículos disponibles.</returns>
+        /// <returns>A list of available vehicles.</returns>
         public async Task<List<Vehicle>> GetAvailableVehiclesAsync()
         {
             return await _vehicles.Find(v => v.IsAvailable).ToListAsync();
         }
 
         /// <summary>
-        /// Añade un nuevo vehículo a la flota.
+        /// Adds a new vehicle to the fleet.
         /// </summary>
-        /// <param name="vehicle">El vehículo a añadir.</param>
-        /// <returns>Una tarea que representa la operación asíncrona.</returns>
+        /// <param name="vehicle">The vehicle to add.</param>
+        /// <returns>A task representing the asynchronous operation.</returns>
         public async Task AddVehicleAsync(Vehicle vehicle)
         {
             await _vehicles.InsertOneAsync(vehicle);
         }
 
         /// <summary>
-        /// Alquila un vehículo.
+        /// Rents a vehicle.
         /// </summary>
-        /// <param name="vehicleId">El ID del vehículo a alquilar.</param>
-        /// <returns>Una tarea que representa la operación asíncrona.</returns>
+        /// <param name="vehicleId">The ID of the vehicle to rent.</param>
+        /// <returns>A task representing the asynchronous operation.</returns>
         public async Task RentVehicleAsync(Guid vehicleId)
         {
             var filter = Builders<Vehicle>.Filter.Eq(v => v.Id, vehicleId);
@@ -53,10 +58,10 @@ namespace GtMotive.Estimate.Microservice.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// Devuelve un vehículo alquilado.
+        /// Returns a rented vehicle.
         /// </summary>
-        /// <param name="vehicleId">El ID del vehículo a devolver.</param>
-        /// <returns>Una tarea que representa la operación asíncrona.</returns>
+        /// <param name="vehicleId">The ID of the vehicle to return.</param>
+        /// <returns>A task representing the asynchronous operation.</returns>
         public async Task ReturnVehicleAsync(Guid vehicleId)
         {
             var filter = Builders<Vehicle>.Filter.Eq(v => v.Id, vehicleId);

@@ -4,6 +4,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using GtMotive.Estimate.Microservice.ApplicationCore.Services;
 using GtMotive.Estimate.Microservice.Domain.Entities;
+using GtMotive.Estimate.Microservice.Domain.Repositories;
+using GtMotive.Estimate.Microservice.Domain.Repositories.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MongoDB.Driver;
@@ -13,7 +15,7 @@ using Xunit;
 namespace FunctionalTests
 {
     /// <summary>
-    /// Pruebas unitarias para la clase VehicleService.
+    /// Unit tests for the VehicleService class.
     /// </summary>
     public class VehicleServiceFunctionalTests
     {
@@ -25,20 +27,20 @@ namespace FunctionalTests
         public async Task RentVehicleShouldMakeVehicleUnavailable()
         {
             // Arrange
-            var mockCollection = new Mock<IMongoCollection<Vehicle>>(); // Mock de IMongoCollection<Vehicle>
-            var mockDatabase = new Mock<IMongoDatabase>(); // Mock de IMongoDatabase
+            var mockCollection = new Mock<IMongoCollection<Vehicle>>(); // Mock of IMongoCollection<Vehicle>
+            var mockDatabase = new Mock<IMongoDatabase>(); // Mock of IMongoDatabase
 
-            // Configurar el mock de IMongoDatabase para devolver el mock de IMongoCollection<Vehicle>
+            // Configure the IMongoDatabase mock to return the IMongoCollection<Vehicle> mock
             mockDatabase
                 .Setup(db => db.GetCollection<Vehicle>(It.IsAny<string>(), null))
                 .Returns(mockCollection.Object);
 
-            // Configurar el mock de IMongoCollection<Vehicle> para simular FindAsync
+            // Configure the IMongoCollection<Vehicle> mock to simulate FindAsync
             var mockCursor = new Mock<IAsyncCursor<Vehicle>>();
-            var vehicles = new List<Vehicle>(); // Lista vacía de vehículos
+            var vehicles = new List<Vehicle>(); // Empty list of vehicles
 
-            mockCursor.Setup(c => c.Current).Returns(vehicles); // Devuelve la lista vacía
-            mockCursor.Setup(c => c.MoveNextAsync(It.IsAny<CancellationToken>())).ReturnsAsync(false); // No hay más datos
+            mockCursor.Setup(c => c.Current).Returns(vehicles); // Returns the empty list
+            mockCursor.Setup(c => c.MoveNextAsync(It.IsAny<CancellationToken>())).ReturnsAsync(false); // No more data
 
             mockCollection
                 .Setup(c => c.FindAsync(
@@ -50,13 +52,13 @@ namespace FunctionalTests
             var host = new HostBuilder()
                 .ConfigureServices(services =>
                 {
-                    // Registrar IMongoDatabase (mock)
+                    // Register IMongoDatabase (mock)
                     services.AddSingleton(mockDatabase.Object);
 
-                    // Registrar IVehicleRepository con la implementación VehicleRepository
+                    // Register IVehicleRepository with the VehicleRepository implementation
                     services.AddScoped<IVehicleRepository, VehicleRepository>();
 
-                    // Registrar VehicleService
+                    // Register VehicleService
                     services.AddScoped<VehicleService>();
                 })
                 .Build();
@@ -66,7 +68,7 @@ namespace FunctionalTests
 
             var vehicle = new Vehicle { Id = Guid.NewGuid(), Year = DateTime.Now.Year, IsAvailable = true };
 
-            // Configurar el mock de IMongoCollection<Vehicle> para simular AddVehicleAsync
+            // Configure the IMongoCollection<Vehicle> mock to simulate AddVehicleAsync
             mockCollection
                 .Setup(c => c.InsertOneAsync(vehicle, null, default))
                 .Returns(Task.CompletedTask);

@@ -1,4 +1,4 @@
-﻿namespace GtMotive.Estimate.Microservice.Infrastructure.MongoDb.Settings
+﻿namespace GtMotive.Estimate.Microservice.Domain.MongoDb.Settings
 {
     public class MongoDbSettings
     {

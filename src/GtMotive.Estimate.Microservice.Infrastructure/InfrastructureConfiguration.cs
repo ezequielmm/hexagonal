@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using GtMotive.Estimate.Microservice.Domain.Interfaces;
-using GtMotive.Estimate.Microservice.Infrastructure.Interfaces;
-using GtMotive.Estimate.Microservice.Infrastructure.Logging;
-using GtMotive.Estimate.Microservice.Infrastructure.Telemetry;
+using GtMotive.Estimate.Microservice.Domain.Logging;
+using GtMotive.Estimate.Microservice.Domain.Telemetry;
 using Microsoft.Extensions.DependencyInjection;
 
 [assembly: CLSCompliant(false)]
 
-namespace GtMotive.Estimate.Microservice.Infrastructure
+namespace GtMotive.Estimate.Microservice.Domain
 {
     public static class InfrastructureConfiguration
     {

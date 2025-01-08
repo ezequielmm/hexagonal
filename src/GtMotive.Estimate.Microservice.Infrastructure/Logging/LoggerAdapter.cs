@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using GtMotive.Estimate.Microservice.Domain.Interfaces;
 using Microsoft.Extensions.Logging;
 
-namespace GtMotive.Estimate.Microservice.Infrastructure.Logging
+namespace GtMotive.Estimate.Microservice.Domain.Logging
 {
     /// <summary>
     /// Class to implement the IAppLogger interface.

@@ -24,6 +24,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GtMotive.Estimate.Microservice.InfrastructureTests", "..\test\infrastructure\GtMotive.Estimate.Microservice.InfrastructureTests\GtMotive.Estimate.Microservice.InfrastructureTests.csproj", "{469DA050-93EC-44F6-AA33-D7072B1149E5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GtMotive.Estimate.Microservice.UnitTests", "..\test\unit\GtMotive.Estimate.Microservice.UnitTests\GtMotive.Estimate.Microservice.UnitTests.csproj", "{5F6CD05A-A921-49B8-BF96-1B931022439C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{157090A2-A86C-4F2A-A31D-3072779E4D99} = {157090A2-A86C-4F2A-A31D-3072779E4D99}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DFAFA64E-36CB-4689-B917-5A6DD3FC8D5E}"
 	ProjectSection(SolutionItems) = preProject

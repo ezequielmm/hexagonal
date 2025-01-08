@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using GtMotive.Estimate.Microservice.ApplicationCore.Services.Interfaces;
 using GtMotive.Estimate.Microservice.Domain.Entities;
+using GtMotive.Estimate.Microservice.Domain.Repositories.Interfaces;
 
 namespace GtMotive.Estimate.Microservice.ApplicationCore.Services
 {
@@ -45,7 +47,7 @@ namespace GtMotive.Estimate.Microservice.ApplicationCore.Services
             {
                 if (DateTime.Now.Year - vehicle.Year > 5)
                 {
-                    throw new InvalidOperationException("El vehículo no puede tener más de 5 años de antigüedad.");
+                    throw new InvalidOperationException("The vehicle cannot be more than 5 years old.");
                 }
 
                 await _vehicleRepository.AddVehicleAsync(vehicle);

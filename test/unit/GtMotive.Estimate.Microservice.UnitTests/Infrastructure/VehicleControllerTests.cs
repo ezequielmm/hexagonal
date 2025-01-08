@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using GtMotive.Estimate.Microservice.Api.Controllers;
 using GtMotive.Estimate.Microservice.ApplicationCore.Services;
+using GtMotive.Estimate.Microservice.Domain.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Xunit;
@@ -8,7 +9,7 @@ using Xunit;
 namespace InfrastructureTests
 {
     /// <summary>
-    /// Pruebas unitarias para la clase Controller.
+    /// Unit tests for the Controller class.
     /// </summary>
     public class VehicleControllerTests
     {
@@ -20,11 +21,11 @@ namespace InfrastructureTests
         public async Task GetAvailableVehiclesShouldReturnOk()
         {
             // Arrange
-            var mockRepository = new Mock<IVehicleRepository>(); // Mock de IVehicleRepository
+            var mockRepository = new Mock<IVehicleRepository>(); // Mock of IVehicleRepository
             mockRepository.Setup(r => r.GetAvailableVehiclesAsync()).ReturnsAsync([]);
 
-            var vehicleService = new VehicleService(mockRepository.Object); // Crear VehicleService con el mock de IVehicleRepository
-            var controller = new VehicleController(vehicleService); // Pasar VehicleService al controlador
+            var vehicleService = new VehicleService(mockRepository.Object); // Create VehicleService with the mock of IVehicleRepository
+            var controller = new VehicleController(vehicleService); // Pass VehicleService to the controller
 
             // Act
             var result = await controller.GetAvailableVehicles();

@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using GtMotive.Estimate.Microservice.Domain.Interfaces;
 
-namespace GtMotive.Estimate.Microservice.Infrastructure.Telemetry
+namespace GtMotive.Estimate.Microservice.Domain.Telemetry
 {
     [ExcludeFromCodeCoverage]
     public class NoOpTelemetry : ITelemetry

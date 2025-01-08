@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using GtMotive.Estimate.Microservice.ApplicationCore.Services;
+using GtMotive.Estimate.Microservice.ApplicationCore.Services.Interfaces;
 using GtMotive.Estimate.Microservice.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 

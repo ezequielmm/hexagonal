@@ -3,32 +3,32 @@
 namespace GtMotive.Estimate.Microservice.Domain.Entities
 {
     /// <summary>
-    /// Representa un vehículo en la flota de renting.
+    /// Represents a vehicle in the rental fleet.
     /// </summary>
     public class Vehicle
     {
         /// <summary>
-        /// Gets or sets el identificador único del vehículo.
+        /// Gets or sets the unique identifier of the vehicle.
         /// </summary>
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or sets la marca del vehículo.
+        /// Gets or sets the make of the vehicle.
         /// </summary>
         public string Make { get; set; }
 
         /// <summary>
-        /// Gets or sets el modelo del vehículo.
+        /// Gets or sets the model of the vehicle.
         /// </summary>
         public string Model { get; set; }
 
         /// <summary>
-        /// Gets or sets el año de fabricación del vehículo.
+        /// Gets or sets the manufacturing year of the vehicle.
         /// </summary>
         public int Year { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether el vehículo está disponible para alquiler.
+        /// Gets or sets a value indicating whether the vehicle is available for rental.
         /// </summary>
         public bool IsAvailable { get; set; } = true;
     }

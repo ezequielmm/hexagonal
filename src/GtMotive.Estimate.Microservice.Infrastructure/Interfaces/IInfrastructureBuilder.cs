@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace GtMotive.Estimate.Microservice.Infrastructure.Interfaces
+namespace GtMotive.Estimate.Microservice.Domain.Interfaces
 {
     public interface IInfrastructureBuilder
     {
