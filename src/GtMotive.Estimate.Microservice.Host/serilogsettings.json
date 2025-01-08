@@ -1,0 +1,41 @@
+﻿{
+  "Logging": {
+    "ApplicationInsights": {
+      "LogLevel": {
+        "Default": "None"
+      }
+    }
+  },
+  "Serilog": {
+    "Using": [
+      "Serilog.Expressions",
+      "SeriLog.Sinks.Console",
+      "Serilog.Sinks.ApplicationInsights"
+    ],
+    "MinimumLevel": {
+      "Default": "Debug",
+      "Override": {
+        "Microsoft": "Information",
+        "System": "Information",
+        "Microsoft.Hosting.Lifetime": "Information",
+        "Microsoft.AspNetCore": "Information",
+        "Microsoft.EntityFrameworkCore": "Warning",
+        "Microsoft.EntityFrameworkCore.Database.Command": "Information"
+      }
+    },
+    "Filter": [
+      {
+        "Name": "ByExcluding",
+        "Args": {
+          "expression": "EndsWith(RequestPath, 'health/live') or EndsWith(RequestPath, 'health/ready')"
+        }
+      },
+      {
+        "Name": "ByExcluding",
+        "Args": {
+          "expression": "(@l='Information' or @l='Debug') and SourceContext='Azure.Messaging.ServiceBus' and (not Contains(@m, 'User'))"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GtMotive.Estimate.Microservice.Api", "GtMotive.Estimate.Microservice.Api\GtMotive.Estimate.Microservice.Api.csproj", "{D081347D-DEAE-46E4-8620-119573B560FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GtMotive.Estimate.Microservice.ApplicationCore", "GtMotive.Estimate.Microservice.ApplicationCore\GtMotive.Estimate.Microservice.ApplicationCore.csproj", "{FDB4DA08-2852-47D2-9123-AC247B7B433F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DAFC007D-B55D-4498-B94E-ACFB38698698}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GtMotive.Estimate.Microservice.Infrastructure", "GtMotive.Estimate.Microservice.Infrastructure\GtMotive.Estimate.Microservice.Infrastructure.csproj", "{30E8BE33-E5C4-4B44-8E36-8FED93966ED2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{32507AA8-A629-48CC-9F32-CBCF746E2117}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "functional", "functional", "{C9CBCBB3-AF99-4FDE-865A-F069C5253E70}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{2CC1761B-D5ED-4CB7-926C-D2CEDA6B9644}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "unit", "unit", "{9759AD80-2ECC-4B44-8D15-B96BD29CB584}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GtMotive.Estimate.Microservice.FunctionalTests", "..\test\functional\GtMotive.Estimate.Microservice.FunctionalTests\GtMotive.Estimate.Microservice.FunctionalTests.csproj", "{0CCA81DE-A370-4454-A3D7-D4597CDD3981}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GtMotive.Estimate.Microservice.InfrastructureTests", "..\test\infrastructure\GtMotive.Estimate.Microservice.InfrastructureTests\GtMotive.Estimate.Microservice.InfrastructureTests.csproj", "{469DA050-93EC-44F6-AA33-D7072B1149E5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GtMotive.Estimate.Microservice.UnitTests", "..\test\unit\GtMotive.Estimate.Microservice.UnitTests\GtMotive.Estimate.Microservice.UnitTests.csproj", "{5F6CD05A-A921-49B8-BF96-1B931022439C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DFAFA64E-36CB-4689-B917-5A6DD3FC8D5E}"
+	ProjectSection(SolutionItems) = preProject
+		..\.editorconfig = ..\.editorconfig
+		..\Directory.Build.targets = ..\Directory.Build.targets
+		..\global.json = ..\global.json
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GtMotive.Estimate.Microservice.Domain", "GtMotive.Estimate.Microservice.Domain\GtMotive.Estimate.Microservice.Domain.csproj", "{157090A2-A86C-4F2A-A31D-3072779E4D99}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GtMotive.Estimate.Microservice.Host", "GtMotive.Estimate.Microservice.Host\GtMotive.Estimate.Microservice.Host.csproj", "{9F5951E0-9865-4EE9-A32A-DC545BF21C95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D081347D-DEAE-46E4-8620-119573B560FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D081347D-DEAE-46E4-8620-119573B560FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D081347D-DEAE-46E4-8620-119573B560FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D081347D-DEAE-46E4-8620-119573B560FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDB4DA08-2852-47D2-9123-AC247B7B433F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDB4DA08-2852-47D2-9123-AC247B7B433F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDB4DA08-2852-47D2-9123-AC247B7B433F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDB4DA08-2852-47D2-9123-AC247B7B433F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30E8BE33-E5C4-4B44-8E36-8FED93966ED2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30E8BE33-E5C4-4B44-8E36-8FED93966ED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30E8BE33-E5C4-4B44-8E36-8FED93966ED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30E8BE33-E5C4-4B44-8E36-8FED93966ED2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CCA81DE-A370-4454-A3D7-D4597CDD3981}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CCA81DE-A370-4454-A3D7-D4597CDD3981}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CCA81DE-A370-4454-A3D7-D4597CDD3981}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CCA81DE-A370-4454-A3D7-D4597CDD3981}.Release|Any CPU.Build.0 = Release|Any CPU
+		{469DA050-93EC-44F6-AA33-D7072B1149E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{469DA050-93EC-44F6-AA33-D7072B1149E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{469DA050-93EC-44F6-AA33-D7072B1149E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{469DA050-93EC-44F6-AA33-D7072B1149E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F6CD05A-A921-49B8-BF96-1B931022439C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F6CD05A-A921-49B8-BF96-1B931022439C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F6CD05A-A921-49B8-BF96-1B931022439C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F6CD05A-A921-49B8-BF96-1B931022439C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{157090A2-A86C-4F2A-A31D-3072779E4D99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{157090A2-A86C-4F2A-A31D-3072779E4D99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{157090A2-A86C-4F2A-A31D-3072779E4D99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{157090A2-A86C-4F2A-A31D-3072779E4D99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F5951E0-9865-4EE9-A32A-DC545BF21C95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F5951E0-9865-4EE9-A32A-DC545BF21C95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F5951E0-9865-4EE9-A32A-DC545BF21C95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F5951E0-9865-4EE9-A32A-DC545BF21C95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D081347D-DEAE-46E4-8620-119573B560FB} = {DAFC007D-B55D-4498-B94E-ACFB38698698}
+		{FDB4DA08-2852-47D2-9123-AC247B7B433F} = {DAFC007D-B55D-4498-B94E-ACFB38698698}
+		{30E8BE33-E5C4-4B44-8E36-8FED93966ED2} = {DAFC007D-B55D-4498-B94E-ACFB38698698}
+		{C9CBCBB3-AF99-4FDE-865A-F069C5253E70} = {32507AA8-A629-48CC-9F32-CBCF746E2117}
+		{2CC1761B-D5ED-4CB7-926C-D2CEDA6B9644} = {32507AA8-A629-48CC-9F32-CBCF746E2117}
+		{9759AD80-2ECC-4B44-8D15-B96BD29CB584} = {32507AA8-A629-48CC-9F32-CBCF746E2117}
+		{0CCA81DE-A370-4454-A3D7-D4597CDD3981} = {C9CBCBB3-AF99-4FDE-865A-F069C5253E70}
+		{469DA050-93EC-44F6-AA33-D7072B1149E5} = {2CC1761B-D5ED-4CB7-926C-D2CEDA6B9644}
+		{5F6CD05A-A921-49B8-BF96-1B931022439C} = {9759AD80-2ECC-4B44-8D15-B96BD29CB584}
+		{157090A2-A86C-4F2A-A31D-3072779E4D99} = {DAFC007D-B55D-4498-B94E-ACFB38698698}
+		{9F5951E0-9865-4EE9-A32A-DC545BF21C95} = {DAFC007D-B55D-4498-B94E-ACFB38698698}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {082C0E30-A2C7-439B-AE7B-129FEC797BEA}
+	EndGlobalSection
+EndGlobal
