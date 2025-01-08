@@ -4,6 +4,9 @@
     <TargetFramework>net9.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
+     
+     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+      
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,8 +27,6 @@
 
   <ItemGroup>
     <Folder Include="Api\" />
-    <Folder Include="ApplicationCore\" />
-    <Folder Include="Infrastructure\" />
   </ItemGroup>
 
 </Project>
